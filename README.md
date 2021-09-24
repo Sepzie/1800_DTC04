@@ -6,6 +6,7 @@
 
 ## General Info
 This browser based web application to ...
+Hi this is Abdullah, and I'm excited about this project because it will change lives.
 	
 ## Technologies
 Technologies used for this project:
