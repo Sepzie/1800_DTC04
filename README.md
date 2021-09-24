@@ -5,7 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+Hi, I'm excited about this project because I have amazing teammates!
 	
 ## Technologies
 Technologies used for this project:
