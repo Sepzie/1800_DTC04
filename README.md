@@ -5,9 +5,8 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
 Hi this is Abdullah, and I'm excited about this project because it will change lives.
-Hi, I'm excited about this project because I have amazing teammates!
+Hi, this is Sepehr, I'm excited about this project because I have amazing teammates!
 This is Hoda fixing the latest changes.
 
 ## Technologies
