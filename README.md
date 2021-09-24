@@ -5,8 +5,9 @@
 * [Contents](#content)
 
 ## General Info
-Hi this is Abdullah, and I'm excited about this project because it will change lives.
-Hi, this is Sepehr, I'm excited about this project because I have amazing teammates!
+Hi this is Abdullah, and I'm excited about this project because it will change lives.  
+Hi, this is Sepehr, I'm excited about this project because I have amazing teammates!  
+Hi, this is Aditya. I am excited because it's Friday.
 This is Hoda fixing the latest changes.
 
 ## Technologies
