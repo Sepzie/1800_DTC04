@@ -5,8 +5,16 @@
 * [Contents](#content)
 
 ## General Info
+<<<<<<< HEAD
 Hi, its Aditya. I am excited because it's Friday!
+=======
+<<<<<<< HEAD
+This browser based web application to ...
+Hi this is Abdullah, and I'm excited about this project because it will change lives.
+=======
+>>>>>>> 57336aafac6be396b64b195f0e0a879d4148a753
 Hi, I'm excited about this project because I have amazing teammates!
+>>>>>>> 0a830bb96d9120488e5b85c14992643cba38ea31
 	
 ## Technologies
 Technologies used for this project:
