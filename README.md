@@ -5,8 +5,12 @@
 * [Contents](#content)
 
 ## General Info
+<<<<<<< HEAD
 This browser based web application to ...
 Hi this is Abdullah, and I'm excited about this project because it will change lives.
+=======
+Hi, I'm excited about this project because I have amazing teammates!
+>>>>>>> 0a830bb96d9120488e5b85c14992643cba38ea31
 	
 ## Technologies
 Technologies used for this project:
