@@ -5,7 +5,7 @@
 * [Contents](#content)
 
 ## General Info
-This browser based web application to ...
+Hi, its Aditya. I am excited because it's Friday!
 	
 ## Technologies
 Technologies used for this project:
