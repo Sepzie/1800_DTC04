@@ -6,6 +6,7 @@
 
 ## General Info
 Hi, its Aditya. I am excited because it's Friday!
+Hi, I'm excited about this project because I have amazing teammates!
 	
 ## Technologies
 Technologies used for this project:
