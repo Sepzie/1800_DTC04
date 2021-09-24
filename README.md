@@ -5,8 +5,15 @@
 * [Contents](#content)
 
 ## General Info
+<<<<<<< HEAD
 Hi this is Abdullah, and I'm excited about this project because it will change lives. 
 Hi, this is Sepehr, I'm excited about this project because I have amazing teammates!
+=======
+Hi this is Abdullah, and I'm excited about this project because it will change lives.  
+Hi, this is Sepehr, I'm excited about this project because I have amazing teammates!  
+Hi, this is Aditya. I am excited because it's Friday.  
+This is Abdullah again.  
+>>>>>>> 7cd4a50fe7d9e33ec58ca8267a6e42976d1e08f0
 This is Hoda fixing the latest changes.
 
 ## Technologies
