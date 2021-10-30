@@ -1,1 +1,18 @@
+body, html {
+    margin: auto;
+    padding: 0%;
+}
 
+#login-logo {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    width: 50px;
+}
+
+#login-header {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    font-size: 130%;
+    
+}
