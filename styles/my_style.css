@@ -3,7 +3,6 @@ body, html {
     padding: 0%;
 }
 
-<<<<<<< HEAD
 #login-logo {
     margin-top: 5vh;
     margin-bottom: 5vh;
@@ -17,7 +16,6 @@ body, html {
     font-size: 130%;
     
 }
-=======
 
 .main-cards {
     display: grid;
@@ -46,4 +44,3 @@ body, html {
 .card-body {
     border-radius: 20px !important;
 }
->>>>>>> c3191bcdfc572ce19700f95692b823af44ed8438
