@@ -20,6 +20,9 @@
 
     <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebaseAPI.js"></script>
+    
+    <!-- Link to the api keys for your firebase project -->
+    <link href="./styles/my_style.css" rel="stylesheet">
 </head>
 
 <body>
@@ -28,54 +31,52 @@
     <!-- Your own HTML layout goes here -->
     <!------------------------------------>
 
-    <header class="container">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">VLB</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Profile</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Settings</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Get Help</a>
-                        </li>
-                    </ul>
-                </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./index.html">VLB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="#">Login/Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>
+    </nav>
 
     <section class="main-cards">
-        <div class="card">
+        <div class="card classroom">
             <a href="#" class="card-body btn btn-primary">
                 <h5 class="card-title">Classroom</h5>
                 <p class="card-text">Take a look at your upcoming lectures.</p>
             </a>
         </div>
 
-        <div class="card">
+        <div class="card todo">
             <a href="#" class="card-body btn btn-primary">
                 <h5 class="card-title">To-Do</h5>
                 <p class="card-text">See your tasks and upcoming due dates.</p>
             </a>
         </div>
 
-        <div class="card">
+        <div class="card notes">
             <a href="#" class="card-body btn btn-primary">
                 <h5 class="card-title">Notes</h5>
                 <p class="card-text">See and share lectures.</p>
             </a>
         </div>
 
-        <div class="card">
+        <div class="card clips">
             <a href="#" class="card-body btn btn-primary">
                 <h5 class="card-title">Clips</h5>
                 <p class="card-text">Rewatch important parts of the lecture.</p>
