@@ -68,7 +68,7 @@
                     </li>
                     <div id="profil-name">
                         <li class="nav-item">
-                            <a class="nav-link" href="./profile.html" id="name-goes-here">...</a>
+                            <a class="nav-link" href="./profile.html" id="name-goes-here1">...</a>
                         </li>
                     </div>
                 </ul>
@@ -78,7 +78,7 @@
 
     <div class="container-fluid bg-dark text-light p-5">
         <div class="container bg-dark p-5">
-            <h1 class="display-4">Good morning, <span id="name-goes-here"></span></h1>
+            <h1 class="display-4">Good morning, <span id="name-goes-here2"></span></h1>
             <hr>
             <p>Your set is: <span id="set-goes-here"></span></p>
         </div>
@@ -137,11 +137,10 @@
                     currentUser.get()
                         .then(userDoc => {
                             var user_Name = userDoc.data().name;
-                            var user_Set = userDoc.data().set;
                             //console.log(user_Name);
                             //document.getElementById("username").innerText = n;                     //using javascript
-                            $("#name-goes-here").text(user_Name); //using jquery
-                            $("set-goes-here").text(user_Set)
+                            $("#name-goes-here1").text(user_Name); //using jquery
+                            $("#name-goes-here2").text(user_Name);
                         })
                 } else {
                     // No user is signed in.
@@ -150,8 +149,31 @@
             });
         }
 
+        function insertSet() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+                    // Do something for the current logged-in user here: 
+                    console.log(user.uid);
+                    //go to the correct user document by referencing to the user uid
+                    currentUser = db.collection("users").doc(user.uid)
+                    //get the document for current user.
+                    currentUser.get()
+                        .then(userDoc => {
+                            var user_Set = userDoc.data().set;
+                            //console.log(user_Name);
+                            //document.getElementById("username").innerText = n;                     //using javascript
+                            $("#set-goes-here").text(user_Set);
+                        })
+                } else {
+                    // No user is signed in.
+                    console.log("no user signed in")
+                }
+            });
+        }
 
         insertName();
+        insertSet();
 
     </script>
 
