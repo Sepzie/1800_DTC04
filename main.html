@@ -19,6 +19,17 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Link to the api keys for your firebase project -->
+
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
     <script src="scripts/firebaseAPI.js"></script>
     
     <!-- Link to the api keys for your firebase project -->
@@ -33,7 +44,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./index.html">VLB</a>
+            <a class="navbar-brand" href="/main.html">VLB</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -92,6 +103,30 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        function insertName() {
+        firebase.auth().onAuthStateChanged(user => {
+            // Check if user is signed in:
+            if (user) {                                                                 
+                // Do something for the current logged-in user here: 
+                console.log(user.uid);
+                //go to the correct user document by referencing to the user uid
+                currentUser = db.collection("users").doc(user.uid);
+                //get the document for current user.
+                currentUser.get()
+			          .then(userDoc => {
+                   var user_Name = userDoc.data().name;
+                   console.log(user_Name);
+                   //method #1:  insert with html only
+                   document.getElementById("card-title").innerText = n;    //using javascript
+                   //method #2:  insert using jquery
+                   //$("#card clips").text(user_Name);                         //using jquery
+                })
+            } else {
+                // No user is signed in.
+            }
+        });
+    }
+    insertName();
     </script>
 
 </body>
