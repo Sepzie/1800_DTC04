@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>My BCIT Project</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebaseAPI.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <link href="./styles/my_style.css" rel="stylesheet">
+
+    <style>
+        section {
+            margin-top: 5%;
+        }
+
+        a {
+            margin-bottom: 2%;
+        }
+
+        #topnav {
+            font-size: larger;
+        }
+
+        #navbar {
+            margin: auto;
+        }
+
+        #profile {
+            margin-right: 40%;
+        }
+    </style>
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebaseAPI.js"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="navbar">
+        <div class="container-fluid">
+            <span class="navbar-brand" href="#">VLB</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                </ul>
+            </div>
+            <img class="bi-window m-auto text-primary" id="profile" src="images/account.png" alt="...">
+        </div>
+    </nav>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="main.html">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Classroom</li>
+        </ol>
+    </nav>
+
+
+    <ul class="nav nav-pills nav-fill" id="topnav">
+        <li class="nav-item">
+            <a class="nav-link" href="classroom.html">Classroom</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="notes.html">Notes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Clips</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#" aria-current="page">To-Do</a>
+        </li>
+    </ul>
+
+
+    <section class="vh-100">
+        <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card" id="list1" style="border-radius: .75rem; background-color: rgb(181, 215, 255);">
+                        <div class="card-body py-4 px-4 px-md-5">
+
+                            <div class="pb-2">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <div class="d-flex flex-row align-items-center">
+                                            <input type="text" class="form-control form-control-lg"
+                                                id="exampleFormControlInput1" placeholder="Add new...">
+                                            <a href="#!" data-mdb-toggle="tooltip" title="Set due date"><i
+                                                    class="fas fa-calendar-alt fa-lg me-3"></i></a>
+                                            <div>
+                                                <button type="button" class="btn btn-primary">Add</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="my-4">
+
+                            <div class="d-flex justify-content-end align-items-center mb-4 pt-2 pb-3">
+                                <p class="small mb-0 me-2 text-muted">Filter</p>
+                                <select class="select">
+                                    <option value="1">All</option>
+                                    <option value="2">Completed</option>
+                                    <option value="3">In progress</option>
+                                    <option value="4">Has due date</option>
+                                </select>
+                                <p class="small mb-0 ms-4 me-2 text-muted">Sort</p>
+                                <select class="select">
+                                    <option value="1">Added date</option>
+                                    <option value="2">Due date</option>
+                                </select>
+                                <a href="#!" style="color: #23af89;" data-mdb-toggle="tooltip" title="Ascending"><i
+                                        class="fas fa-sort-amount-down-alt ms-2"></i></a>
+                            </div>
+
+                            <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
+                                <li
+                                    class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                                    <div class="form-check">
+                                        <input class="form-check-input me-0" type="checkbox" value=""
+                                            id="flexCheckChecked1" aria-label="..." checked />
+                                    </div>
+                                </li>
+                                <li
+                                    class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                                    <p class="lead fw-normal mb-0">Buy groceries for next week</p>
+                                </li>
+                                <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                                    <div class="d-flex flex-row justify-content-end mb-1">
+                                        <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i
+                                                class="fas fa-pencil-alt me-3"></i></a>
+                                        <a href="#!" class="text-danger" data-mdb-toggle="tooltip"
+                                            title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                                    </div>
+                                    <div class="text-end text-muted">
+                                        <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                                            <p class="small mb-0"><i class="fas fa-info-circle me-2"></i>28th Jun 2020
+                                            </p>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal rounded-0">
+                                <li
+                                    class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                                    <div class="form-check">
+                                        <input class="form-check-input me-0" type="checkbox" value=""
+                                            id="flexCheckChecked2" aria-label="..." />
+                                    </div>
+                                </li>
+                                <li
+                                    class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                                    <p class="lead fw-normal mb-0">Renew car insurance</p>
+                                </li>
+                                <li class="list-group-item px-3 py-1 d-flex align-items-center border-0 bg-transparent">
+                                    <div
+                                        class="py-2 px-3 me-2 border border-warning rounded-3 d-flex align-items-center bg-light">
+                                        <p class="small mb-0">
+                                            <a href="#!" data-mdb-toggle="tooltip" title="Due on date">
+                                                <i class="fas fa-hourglass-half me-2 text-warning"></i>
+                                            </a>
+                                            28th Jun 2020
+                                        </p>
+                                    </div>
+                                </li>
+                                <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                                    <div class="d-flex flex-row justify-content-end mb-1">
+                                        <a href="#!" class="text-info" data-mdb-toggle="tooltip" title="Edit todo"><i
+                                                class="fas fa-pencil-alt me-3"></i></a>
+                                        <a href="#!" class="text-danger" data-mdb-toggle="tooltip"
+                                            title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                                    </div>
+                                    <div class="text-end text-muted">
+                                        <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                                            <p class="small mb-0"><i class="fas fa-info-circle me-2"></i>28th Jun 2020
+                                            </p>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <ul class="list-group list-group-horizontal rounded-0 mb-2">
+                                <li
+                                    class="list-group-item d-flex align-items-center ps-0 pe-3 py-1 rounded-0 border-0 bg-transparent">
+                                    <div class="form-check">
+                                        <input class="form-check-input me-0" type="checkbox" value=""
+                                            id="flexCheckChecked3" aria-label="..." />
+                                    </div>
+                                </li>
+                                <li
+                                    class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
+                                    <p class="lead fw-normal mb-0 bg-light w-100 ms-n2 ps-2 py-1 rounded">Sign up for
+                                        online course</p>
+                                </li>
+                                <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
+                                    <div class="d-flex flex-row justify-content-end mb-1">
+                                        <a href="#!" class="text-danger" data-mdb-toggle="tooltip"
+                                            title="Delete todo"><i class="fas fa-trash-alt"></i></a>
+                                    </div>
+                                    <div class="text-end text-muted">
+                                        <a href="#!" class="text-muted" data-mdb-toggle="tooltip" title="Created date">
+                                            <p class="small mb-0"><i class="fas fa-info-circle me-2"></i>28th Jun 2020
+                                            </p>
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+
+                            <table class="table mb-4">
+                                <thead>
+                                  <tr>
+                                    <th scope="col" >No.</th>
+                                    <th scope="col">To-Do</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Actions</th>
+                                    <th scope="col">Last Date</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row"> <input class="form-check-input me-0" type="checkbox" value=""
+                                        id="flexCheckChecked1" aria-label="..." checked /></th>
+                                    <td>Buy groceries for next week</td>
+                                    <td>Completed</td>
+                                    <td>
+                                      <button type="submit" class="btn btn-danger">Delete</button>                                      
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row"><input class="form-check-input me-0" type="checkbox" value=""
+                                        id="flexCheckChecked2" aria-label="..." /></th>
+                                    <td>Renew car insurance</td>
+                                    <td>Has due date</td>
+                                    <td>
+                                      <button type="submit" class="btn btn-danger">Delete</button>                                      
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row"><input class="form-check-input me-0" type="checkbox" value=""
+                                        id="flexCheckChecked2" aria-label="..." /></th>
+                                    <td>Sign up for online course</td>
+                                    <td>In progress</td>
+                                    <td>
+                                      <button type="submit" class="btn btn-danger">Delete</button>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
