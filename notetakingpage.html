@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <title>profile</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./styles/my_style.css">
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap FirebaseUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- Link to the api keys for your firebase project -->
+    <script src="scripts/firebaseAPI.js"></script>
+
+    <!-- CDN-->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="./main.html">VLB</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" id="name-goes-here">...</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="form-group"  style="display: block; width: 80%; margin: auto;">
+        <label for="exampleFormControlTextarea1" style="margin-top: 5%; margin-bottom: 5%;"><b>COMP 1510</b></label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        <button type="button" class="btn btn-info" onclick="saveUserNote()" style="margin-top: 5%;">Save</button>
+    </div>
+
+    <script>
+        var currentUser
+
+        function saveUserNote() {
+            //Save new info to database
+            note = document.getElementById('exampleFormControlTextarea1').value; //get the value of the field with id="nameInput"
+            
+            currentUser.update({
+                    note: note,
+                })
+                .then(() => {
+                    console.log("Note successfully Taken!");
+                })
+        }
+
+        function insertName() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+                    // Do something for the current logged-in user here: 
+                    console.log(user.uid);
+                    //go to the correct user document by referencing to the user uid
+                    currentUser = db.collection("users").doc(user.uid);
+                    //get the document for current user.
+                    currentUser.get().then(userDoc => {
+                        var user_Name = userDoc.data().name;
+                        console.log(user_Name);
+                        //method #1:  insert with html only
+                        //document.getElementById("name-goes-here").innerText = n;    //using javascript
+                        //method #2:  insert using jquery
+                        $("#name-goes-here").text(user_Name); //using jquery
+                    })
+                } else {
+                    // No user is signed in.
+                }
+            });
+        }
+        insertName();
+    </script>
+</body>
+
+</html>
