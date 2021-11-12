@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 
 <head lang="en">
     <title>profile</title>
@@ -38,7 +39,6 @@
 </head>
 
 <body>
-    <!-- Nav bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-primary">
         <div class="container-fluid">
             <a class="navbar-brand" href="./main.html">VLB</a>
@@ -61,90 +61,26 @@
             </div>
         </div>
     </nav>
-
-    <div class="container">
-        <h1>User Profile </h1>
-        <form>
-            <fieldset class="mb-3" id="personalInfoFields" disabled>
-                <div class="form-group">
-                    <label>Name</label>
-                    <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
-                </div>
-                <div class="form-group">
-                    <label>Set</label>
-                    <select id="setInput" name="set" class="form-select" aria-label="Default select example">
-                        <option value="A">A</option>
-                        <option value="B">B</option>
-                        <option value="C">C</option>
-                        <option value="D">D</option>
-                        <option value="E">E</option>
-                        <option value="F">F</option>
-                    </select>
-                </div>
-            </fieldset>
-            <div class="d-flex justify-content-end mt-5">
-                <button type="button" class="btn btn-secondary" onclick="editUserInfo()">Edit</button>
-                <span style="width: 10px"></span>
-                <button type="button" class="btn btn-info" onclick="saveUserInfo()">Save</button>
-            </div>
-        </form>
+    <div class="form-group"  style="display: block; width: 80%; margin: auto;">
+        <label for="exampleFormControlTextarea1" style="margin-top: 5%; margin-bottom: 5%;"><b>COMP 1510</b></label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+        <button type="button" class="btn btn-info" onclick="saveUserNote()" style="margin-top: 5%;">Save</button>
     </div>
 
     <script>
-
-        
         var currentUser
 
-        function populateInfo() {
-            firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
-                if (user) {
-
-                    //go to the correct user document by referencing to the user uid
-                    currentUser = db.collection("users").doc(user.uid)
-                    //get the document for current user.
-                    currentUser.get()
-                        .then(userDoc => {
-                            //get the data fields of the user
-                            var userName = userDoc.data().name;
-                            var userSet = userDoc.data().set;
-
-                            //if the data fields are not empty, then write them in to the form.
-                            if (userName != null) {
-                                document.getElementById("nameInput").value = userName;
-                            }
-                            if (userSet != null) {
-                                document.getElementById("setInput").value = userSet;
-                            }
-                        })
-                } else {
-                    // No user is signed in.
-                    console.log("No user is signed in");
-                }
-            });
-        }
-
-        function editUserInfo() {
-            //Enable the form fields
-            document.getElementById('personalInfoFields').disabled = false;
-        }
-
-        function saveUserInfo() {
+        function saveUserNote() {
             //Save new info to database
-            userName = document.getElementById('nameInput').value; //get the value of the field with id="nameInput"
-            userSet = document.getElementById('setInput').value; //get the value of the field with id="setInput"
+            note = document.getElementById('exampleFormControlTextarea1').value; //get the value of the field with id="nameInput"
+            
             currentUser.update({
-                    name: userName,
-                    set: userSet
+                    note: note,
                 })
                 .then(() => {
-                    console.log("Document successfully updated!");
+                    console.log("Note successfully Taken!");
                 })
-            document.getElementById('personalInfoFields').disabled = true;
         }
-
-        //call the function to run it 
-        populateInfo();
 
         function insertName() {
             firebase.auth().onAuthStateChanged(user => {
@@ -171,3 +107,5 @@
         insertName();
     </script>
 </body>
+
+</html>
