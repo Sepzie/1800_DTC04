@@ -126,7 +126,7 @@
             <div class="col-sm">
                 <div class="card" style="width: 18rem;">
                     <div class="card-body">
-                        <h5 class="card-title">COMP 1510</h5>
+                        <h5 class="card-title" id="COMP1510">COMP 1510</h5>
                         <p class="card-text">Instructor: Chris Thompson</p>
                         <p class="card-text">Time: 10:30-12:20</p>
                         <a href="./viewnotes.html" class="btn btn-primary">View Notes</a>
@@ -243,6 +243,7 @@
         </div>
     </section>
     <script>
+        localStorage.setItem('courseName', 'COMP1510')
         function insertName() {
             firebase.auth().onAuthStateChanged(user => {
                 // Check if user is signed in:
