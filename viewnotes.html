@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<head lang="en">
+<head lang="en" style="margin: auto; padding: 0px;">
     <title>View Notes</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="./styles/my_style.css">
@@ -37,23 +37,12 @@
 
 </head>
 
-<body style="width: 100%;">
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary" style="width: 100%;">
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./main.html">VLB</a>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#" id="name-goes-here">...</a>
-                    </li>
-                </ul>
-            </div>
+            <span class="navbar-brand" href="main">VLB</span>
+            <a href="/profile.html"><img class="bi-window text-primary" id="profile" src="./images/account.png" alt="..."></a>
+            
         </div>
     </nav>
     <div class="row">
@@ -72,15 +61,15 @@
         </div>
     </template>
 
-    <div class="container">
-        <h1 style="margin-top: 5%; margin-left: 5%;">Notes</h1>
+    <div class="container" style="width: 100%; padding: 0px;">
+        <h1 style="display: inline-block; margin-top: 5%; margin-left: 5%;">Notes</h1>
         <div class="container">
             <div id="COMP1510Notes-go-here" class="row row-cols-auto">
 
             </div>
         </div>
     </div>
-    <a href="./notetakingpage.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">+</a>
+    <a href="./notetakingpage.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="float: right; margin: auto;">+</a>
     <script>
         var currentUser;
 
@@ -97,11 +86,15 @@
                             var i = 1;
                             snap.forEach(doc => { //iterate thru each doc
                                 var title = doc.data().Title;
-                                var details = doc.data().Note;
+                                var details = doc.data().Note.slice(0, 30);
                                 let newcard = CardTemplate.content.cloneNode(true);
-
+                                
                                 //update title and text and image
                                 newcard.querySelector('.card-title').innerHTML = title;
+
+                                if (details.length >= 30) {
+                                    details = details + "...";
+                                }
                                 newcard.querySelector('.card-text').innerHTML = details;
 
                                 //give unique ids to all elements for future use
