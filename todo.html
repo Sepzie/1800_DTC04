@@ -8,38 +8,38 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-     <!-- CSS only -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
- <!-- Bootstrap FirebaseUI CSS -->
- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
- <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
-
- <!-- Google Icons (Material Design)-->
- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Bootstrap FirebaseUI CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
 
- <!-- Firebase 8 CDNs-->
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
-     </script>
- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
- <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <!-- Google Icons (Material Design)-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
- <script src="scripts/firebaseAPI.js"></script>
 
- <!-- Link to the api keys for your firebase project -->
- <link href="./styles/my_style.css" rel="stylesheet">
+    <!-- Firebase 8 CDNs-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+        </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
- <!-- CDN-->
- <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
- <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
+    <script src="scripts/firebaseAPI.js"></script>
+
+    <!-- Link to the api keys for your firebase project -->
+    <link href="./styles/my_style.css" rel="stylesheet">
+
+    <!-- CDN-->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <style>
         section {
@@ -69,15 +69,16 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="navbar">
         <div class="container-fluid">
             <span class="navbar-brand" href="main">VLB</span>
-            <a href="/profile.html"><img class="bi-window text-primary" id="profile" src="./images/account.png" alt="..."></a>
-            
+            <a href="/profile.html"><img class="bi-window text-primary" id="profile" src="./images/account.png"
+                    alt="..."></a>
+
         </div>
     </nav>
 
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="main.html">Home</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Classroom</li>
+            <li class="breadcrumb-item active" aria-current="page">To-Do</li>
         </ol>
     </nav>
 
@@ -97,148 +98,141 @@
         </li>
     </ul>
 
+    <template id="CardTemplate" style="margin: auto;">
+        <div class="card py-2 mx-2" style="width: 18rem; margin: 5%">
+            <div class="card-body">
+                <h5 class="card-item">...</h5>
+                <p class="card-date">...</p>
+                <a class="btn btn-danger card-href" style="float: right; font-size: 0.6em;" onclick="deleteTodo()">Delete</a>
+            </div>
+        </div>
+    </template>
 
-    <section class="vh-100">
-        <div class="container py-5 h-50">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col">
-                    <div class="card" id="list1" style="border-radius: .75rem; background-color: rgb(181, 215, 255);">
-                        <div class="card-body py-4 px-4 px-md-5">
-
-                            <div class="pb-2">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex flex-row align-items-center">
-                                            <input type="text" class="form-control form-control-lg"
-                                                id="exampleFormControlInput1" placeholder="Add new...">
-                                            <a href="#!" data-mdb-toggle="tooltip" title="Set due date"><i
-                                                    class="fas fa-calendar-alt fa-lg me-3"></i></a>
-                                            <div>
-                                                <button type="button" class="btn btn-primary">Add</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <hr class="my-4">
-
-                            <div class="d-flex flex-fill justify-content-end align-items-center mb-4 pt-2 pb-3">
-                                <div class="flex-fill flex-grow-1">
-                                    <p class="small mb-0 me-2 text-muted">Filter</p>
-                                    <select class="select">
-                                        <option value="1">All</option>
-                                        <option value="2">Completed</option>
-                                        <option value="3">In progress</option>
-                                        <option value="4">Has due date</option>
-                                    </select>
-                                </div>
-                                <div class="flex-fill">
-                                    <p class="small mb-0 ms-4 me-2 text-muted">Sort</p>
-                                    <select class="select">
-                                        <option value="1">Added date</option>
-                                        <option value="2">Due date</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <ul class="list-group list-group-horizontal rounded-0 bg-transparent">
-                                <li
-                                    class="list-group-item d-flex align-items-center ps-0 pe-0 py-1 rounded-0 border-0 bg-transparent">
-                                    <div class="form-check">
-                                        <input class="form-check-input me-0" type="checkbox" value=""
-                                            id="flexCheckChecked1" aria-label="..." checked />
-                                    </div>
-                                </li>
-                                <li
-                                    class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-                                    <p class="lead fw-normal mb-0">COMP 1510 Lab 6</p>
-                                </li>
-                                <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
-
-                                    <div class="text-end text-muted">
-
-                                        <p class="mb-lg-2 mb-0"><i class="fas fa-info-circle me-2"></i>8th Nov 2021
-                                        </p>
-
-                                    </div>
-                                </li>
-                            </ul>
-                            <ul class="list-group list-group-horizontal rounded-0">
-                                <li
-                                    class="list-group-item d-flex align-items-center ps-0 pe-0 py-1 rounded-0 border-0 bg-transparent">
-                                    <div class="form-check">
-                                        <input class="form-check-input me-0" type="checkbox" value=""
-                                            id="flexCheckChecked2" aria-label="..." />
-                                    </div>
-                                </li>
-                                <li
-                                    class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-                                    <p class="lead fw-normal mb-0">COMP 1537 Assignment 4</p>
-                                </li>
-
-                                <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
-
-                                    <div class="text-end text-muted">
-
-                                        <p class="mb-lg-2 mb-0"><i class="fas fa-info-circle me-2"></i>12th Nov 2021
-                                        </p>
-
-                                    </div>
-                                </li>
-                            </ul>
-                            <ul class="list-group list-group-horizontal rounded-0 mb-2">
-                                <li
-                                    class="list-group-item d-flex align-items-center ps-0 pe-0 py-1 rounded-0 border-0 bg-transparent">
-                                    <div class="form-check">
-                                        <input class="form-check-input me-0" type="checkbox" value=""
-                                            id="flexCheckChecked3" aria-label="..." />
-                                    </div>
-                                </li>
-                                <li
-                                    class="list-group-item px-3 py-1 d-flex align-items-center flex-grow-1 border-0 bg-transparent">
-                                    <p class="lead fw-normal mb-0">Incident Report</p>
-                                </li>
-                                <li class="list-group-item ps-3 pe-0 py-1 rounded-0 border-0 bg-transparent">
-
-                                    <div class="text-end text-muted">
-
-                                        <p class="mb-lg-2 mb-0"><i class="fas fa-info-circle me-2"></i>11th Nov 2021
-                                        </p>
-
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+    <p class="h1 text-center mt-3 mb-4 pb-3 text-primary">
+        <i class="fas fa-check-square me-1"></i>
+        <u>My Todo-s</u>
+    </p>
+    <div class="pb-2">
+        <div class="card">
+            <div class="card-body" style="background-color: rgb(181, 215, 255);">
+                <div class="d-flex flex-row align-items-center" style="margin-bottom: 5%;">
+                    <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+                        placeholder="Add new...">
+                    <a href="#!" data-mdb-toggle="tooltip" title="Set due date"><i
+                            class="fas fa-calendar-alt fa-lg me-3"></i></a>
+                    <div>
+                        <button type="button" class="btn btn-primary" onclick="saveUserTodo()">Add</button>
+                    </div>
+                </div>
+                <div class="container h-100">
+                    <div class="row">
+                        <label for="exampleFormControlTextarea1" class="col align-self-center"><b>Due Date:</b></label>
+                        <input type="date" class="form-control col" id="myDate" value="2021-12-01">
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+
+    <div class="container">
+        <div id="todoitem-go-here" class="row row-cols-auto">
+
+        </div>
+    </div>
+
+
     <script>
-        function insertName() {
+        var currentUser
+
+        function saveUserTodo() {
             firebase.auth().onAuthStateChanged(user => {
                 // Check if user is signed in:
                 if (user) {
-                    // Do something for the current logged-in user here: 
+                    // Do something for the current logged-in user here:
                     console.log(user.uid);
                     //go to the correct user document by referencing to the user uid
-                    currentUser = db.collection("users").doc(user.uid)
-                    //get the document for current user.
-                    currentUser.get()
-                        .then(userDoc => {
-                            var user_Name = userDoc.data().name;
-                            //console.log(user_Name);
-                            //document.getElementById("username").innerText = n;                     //using javascript
-                            $("#name-goes-here1").text(user_Name); //using jquery
-                        })
+                    //Save new info to database
+                    todo = document.getElementById('exampleFormControlInput1').value; //get the value of the field with id="exampleFormControlInput1"
+                    date = document.getElementById('myDate').value;
+                    
+                    console.log(todo);
+                    console.log(date)
+
+                    currentUser = db.collection("users").doc(user.uid).collection("todo");
+
+                    currentUser.add({
+                        To_Do: todo,
+                        Due_Date: date
+                    })
+                    console.log(todo +  'and' + date + ' was added to the To-Do List')
+                    displayNewTodo(todo, date);
                 } else {
                     // No user is signed in.
-                    console.log("no user signed in")
                 }
             });
         }
-        insertName();
+
+        function displayNewTodo(string, date) {
+            let newcard = CardTemplate.content.cloneNode(true);
+            //update title and text and image
+            newcard.querySelector('.card-item').innerHTML = string;
+            newcard.querySelector('.card-date').innerHTML = "Due Date: " + date;
+
+            //attach to gallery
+            document.getElementById("todoitem-go-here").appendChild(newcard);
+
+        }
+
+        // function deleteTodo() {
+        //     firebase.auth().onAuthStateChanged(user => {
+        //         // Check if user is signed in:
+        //         if (user) {
+        //             // Do something for the current logged-in user here:
+        //             console.log(user.uid);
+        //             //go to the correct user document by referencing to the user uid
+        //             //Save new info to database
+        //             var db.collection("users").doc(user.uid).collection("todo").delete()
+        //             displayNewTodo(todo, date);
+        //         } else {
+        //             // No user is signed in.
+        //         }
+        //     });
+        // }
+
+        function displayTodo() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+                    let CardTemplate = document.getElementById("CardTemplate");
+
+                    db.collection("users").doc(user.uid).collection("todo").get()
+                        .then(snap => {
+                            var i = 1;
+                            snap.forEach(doc => { //iterate thru each doc
+                                var item = doc.data().To_Do;
+                                var date = doc.data().Due_Date;
+                                let newcard = CardTemplate.content.cloneNode(true);
+
+                                //update title and text and image
+                                newcard.querySelector('.card-item').innerHTML = item;
+                                newcard.querySelector('.card-date').innerHTML = "Due Date: " + date;
+
+                                //give unique ids to all elements for future use
+                                newcard.querySelector('.card-item').setAttribute("id", "citem" + i);
+                                newcard.querySelector('.card-date').setAttribute("id", "cdate" + i);
+
+                                //attach to gallery
+                                document.getElementById("todoitem-go-here").appendChild(newcard);
+                                i++;
+                            })
+                        })
+                } else {
+
+                }
+            });
+        }
+
+        displayTodo();
     </script>
 
 
