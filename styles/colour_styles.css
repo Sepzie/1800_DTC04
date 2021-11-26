@@ -25,3 +25,29 @@ body {
 .card-title, .card-text {
     color: rgb(255, 255, 255) !important; /* Changes font color in cards */
 }
+body{
+    background-color: white;
+}
+
+.list-group-item{ /*Banner for each date in classroom*/
+    background-color: rgb(119, 219, 132) !important;
+    color: black !important;
+    border: none !important;
+}
+
+.card{ /*Card for each class in classroom*/
+    color: black !important;
+    background-color: rgb(119, 219, 132);
+    border: 2px solid black;
+}
+
+.btn-primary{
+    background-color: black;
+    color: red
+}
+
+
+/* .row{
+    background-color: red;
+    color: red;
+} */
