@@ -1,3 +1,44 @@
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link { /* font colour and background colour of the selected tab */
+    color: rgb(238, 0, 0);
+    background-color: #000000;
+}
+
+.nav-link { /* font colour of the rest of the unselected tab */
+    color: #d9fd0d;
+}
+
+.text-primary { /* font colour of the My todo list */
+    color: #11fd0d!important;
+}
+
+#main-area { /* background colour of the main task adding area */
+    background-color:aquamarine
+}
+
+.btn-primary { /* font colour and background colour of the Add button */
+    color: aquamarine;
+    background-color: bisque;
+}
+
+.EditButton { /* font colour and background colour of the Edit button */
+    color: aquamarine;
+    background-color: bisque;
+}
+
+.DeleteButton { /* font colour and background colour of the Delete button */
+    color: aquamarine;
+    background-color: bisque;
+}
+
+.btn-secondary { /* font colour and background colour of the Edit button in the todomore page */
+    color: aquamarine;
+    background-color: bisque;
+}
+
+.btn-info { /* font colour and background colour of the Save button in the todomore page */
+    color: aquamarine;
+    background-color: bisque;
+}
 .bg-primary {
     background-color: #516e88 !important;
 }
