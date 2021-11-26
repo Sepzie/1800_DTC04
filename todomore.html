@@ -3,7 +3,7 @@
 <head lang="en">
     <title>profile</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="./styles/my_style.css">
+    
 
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -34,7 +34,9 @@
     <!-- CDN-->
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
-
+    
+    <link href="./styles/colour_styles.css" rel="stylesheet">
+    
     <style>
         a {
             color: black;
@@ -55,11 +57,11 @@
     </nav>
 
     <div class="container">
-        <h1>Edit Todo</h1>
+        <h1>Edit Todo Task</h1>
         <form>
             <fieldset class="mb-3" id="personalInfoFields" disabled>
                 <div class="form-group">
-                    <label>Name</label>
+                    <label>Task Title</label>
                     <input type="text" id="titleInput" class="form-control" placeholder="Enter your name">
                 </div>
                 <div class="form-group">
