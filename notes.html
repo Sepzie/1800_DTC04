@@ -146,7 +146,7 @@
             let DateTemplate = document.getElementById("DateTemplate")
             let ClassTemplate = document.getElementById("ClassTemplate")
 
-            var set = db.collection("classes").doc("A")
+            var set = db.collection("classes").doc(setName)
             set.get()
                 .then(setDoc => {
                     var Dates = setDoc.data().Dates;
