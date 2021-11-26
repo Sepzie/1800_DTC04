@@ -103,7 +103,9 @@
             <div class="card-body">
                 <h5 class="card-item">...</h5>
                 <p class="card-date">...</p>
-                <!-- <a class="btn btn-danger card-href" style="float: right; font-size: 0.6em;" onclick="deleteTodo()">Delete</a> -->
+                <p class="doc-id" style="display: none;">...</p>
+                <a class="btn btn-info EditButton" href="todomore.html" style="float: left; font-size: 0.6em;" onclick="setEditData(this.id)">Edit</a>
+                <a class="btn btn-danger DeleteButton" style="float: right; font-size: 0.6em;" onclick="deleteTodo(this.id), displayAfterDelete(this)">Delete</a>
             </div>
         </div>
     </template>
@@ -154,7 +156,7 @@
                     //Save new info to database
                     todo = document.getElementById('exampleFormControlInput1').value; //get the value of the field with id="exampleFormControlInput1"
                     date = document.getElementById('myDate').value;
-                    
+
                     console.log(todo);
                     console.log(date)
 
@@ -164,40 +166,71 @@
                         To_Do: todo,
                         Due_Date: date
                     })
-                    console.log(todo +  'and' + date + ' was added to the To-Do List')
-                    displayNewTodo(todo, date);
+
+                        .then(function (docRef) {
+                            console.log("Document written with ID: ", docRef.id);
+                            doc_id = docRef.id
+                            currentUser.doc(docRef.id).set({
+                                To_Do: todo,
+                                Due_Date: date,
+                                Doc_ID: docRef.id
+                            })
+                            displayNewTodo(todo, date, doc_id);
+                        })
+                    console.log(todo + ' and ' + date + ' was added to the To-Do List')
                 } else {
                     // No user is signed in.
                 }
             });
         }
 
-        function displayNewTodo(string, date) {
+        function displayNewTodo(string, date, id) {
             let newcard = CardTemplate.content.cloneNode(true);
             //update title and text and image
             newcard.querySelector('.card-item').innerHTML = string;
             newcard.querySelector('.card-date').innerHTML = "Due Date: " + date;
+            newcard.querySelector('.doc-id').innerHTML = id;
+
 
             //attach to gallery
             document.getElementById("todoitem-go-here").appendChild(newcard);
 
         }
 
-        // function deleteTodo() {
-        //     firebase.auth().onAuthStateChanged(user => {
-        //         // Check if user is signed in:
-        //         if (user) {
-        //             // Do something for the current logged-in user here:
-        //             console.log(user.uid);
-        //             //go to the correct user document by referencing to the user uid
-        //             //Save new info to database
-        //             var db.collection("users").doc(user.uid).collection("todo").delete()
-        //             displayNewTodo(todo, date);
-        //         } else {
-        //             // No user is signed in.
-        //         }
-        //     });
-        // }
+        function displayAfterDelete(id) {
+            id.parentNode.parentNode.parentNode.removeChild(id.parentNode.parentNode)
+        }
+
+
+        function deleteTodo(id) {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+                    console.log(id)
+                    // Do something for the current logged-in user here:
+                    
+                    //go to the correct user document by referencing to the user uid
+                    //Save new info to database
+                    
+                    // let doc_id = document.getElementsByName().id
+
+                    db.collection("users").doc(user.uid).collection("todo").doc(id).delete();
+                    console.log('Successfully deleted '+ id)
+                    
+                    
+                    // var query = todoRef.where()
+
+                } else {
+                    // No user is signed in.
+                }
+            });
+        }
+
+        function setEditData(id) {
+            var doc_id = id.slice(1, )
+            localStorage.setItem("Doc_ID", doc_id)
+
+        }
 
         function displayTodo() {
             firebase.auth().onAuthStateChanged(user => {
@@ -211,16 +244,22 @@
                             snap.forEach(doc => { //iterate thru each doc
                                 var item = doc.data().To_Do;
                                 var date = doc.data().Due_Date;
+                                var doc_id = doc.data().Doc_ID
                                 let newcard = CardTemplate.content.cloneNode(true);
 
                                 //update title and text and image
                                 newcard.querySelector('.card-item').innerHTML = item;
                                 newcard.querySelector('.card-date').innerHTML = "Due Date: " + date;
+                                newcard.querySelector('.doc-id').innerHTML = doc_id;
 
                                 //give unique ids to all elements for future use
                                 newcard.querySelector('.card-item').setAttribute("id", "citem" + i);
                                 newcard.querySelector('.card-date').setAttribute("id", "cdate" + i);
-
+                                newcard.querySelector('.doc-id').setAttribute("name", "doc-id" + i);
+                                newcard.querySelector('.doc-id').setAttribute("id", doc_id)
+                                newcard.querySelector('.DeleteButton').setAttribute("id", doc_id)
+                                newcard.querySelector('.EditButton').setAttribute("id", "u" + doc_id)
+                        
                                 //attach to gallery
                                 document.getElementById("todoitem-go-here").appendChild(newcard);
                                 i++;

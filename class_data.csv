@@ -1,0 +1,91 @@
+Set,Date,CourseID,CourseName,Instructor,Time
+A,22-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 11:20am
+A,22-Nov-21,COMP 1100,CST Program Fundamentals,Dana Turner,11:30am - 12:20pm
+A,22-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:30pm
+A,23-Nov-21,COMP 1712,Biz Analysis and System Design,Hoda Rashedi,8:30am - 10:20am
+A,23-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+A,23-Nov-21,COMP 1537,Web Development,Arron Ferguson,1:30pm - 3:30pm
+A,24-Nov-21,COMM 1116,Business Communications,Sam Lee,8:30am - 10:20am
+A,24-Nov-21,COMP 1712 - LAB,Biz Analysis and System Design,Hoda Rashedi,12:30pm - 2:20pm
+A,25-Nov-21,COMP 1113,Business Communications,Takashi Nakamura,8:30am - 10:20am
+A,25-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 12:20pm
+A,25-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:20pm
+A,25-Nov-21,COMM 1116,Business Communications,Sam Lee,3:30pm - 5:20pm
+A,26-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+A,26-Nov-21,COMP 1113,Business Communications,Sam Lee,1:30pm - 3:20pm
+A,26-Nov-21,COMP 1537,Web Development,Arron Ferguson,3:30pm - 5:20pm
+B,22-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 11:20am
+B,22-Nov-21,COMP 1100,CST Program Fundamentals,Dana Turner,11:30am - 12:20pm
+B,22-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:30pm
+B,23-Nov-21,COMP 1712,Biz Analysis and System Design,Hoda Rashedi,8:30am - 10:20am
+B,23-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+B,23-Nov-21,COMP 1537,Web Development,Arron Ferguson,1:30pm - 3:30pm
+B,24-Nov-21,COMM 1116,Business Communications,Sam Lee,8:30am - 10:20am
+B,24-Nov-21,COMP 1712 - LAB,Biz Analysis and System Design,Hoda Rashedi,12:30pm - 2:20pm
+B,25-Nov-21,COMP 1113,Business Communications,Takashi Nakamura,8:30am - 10:20am
+B,25-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 12:20pm
+B,25-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:20pm
+B,25-Nov-21,COMM 1116,Business Communications,Sam Lee,3:30pm - 5:20pm
+B,26-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+B,26-Nov-21,COMP 1113,Business Communications,Sam Lee,1:30pm - 3:20pm
+B,26-Nov-21,COMP 1537,Web Development,Arron Ferguson,3:30pm - 5:20pm
+C,22-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 11:20am
+C,22-Nov-21,COMP 1100,CST Program Fundamentals,Dana Turner,11:30am - 12:20pm
+C,22-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:30pm
+C,23-Nov-21,COMP 1712,Biz Analysis and System Design,Hoda Rashedi,8:30am - 10:20am
+C,23-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+C,23-Nov-21,COMP 1537,Web Development,Arron Ferguson,1:30pm - 3:30pm
+C,24-Nov-21,COMM 1116,Business Communications,Sam Lee,8:30am - 10:20am
+C,24-Nov-21,COMP 1712 - LAB,Biz Analysis and System Design,Hoda Rashedi,12:30pm - 2:20pm
+C,25-Nov-21,COMP 1113,Business Communications,Takashi Nakamura,8:30am - 10:20am
+C,25-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 12:20pm
+C,25-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:20pm
+C,25-Nov-21,COMM 1116,Business Communications,Sam Lee,3:30pm - 5:20pm
+C,26-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+C,26-Nov-21,COMP 1113,Business Communications,Sam Lee,1:30pm - 3:20pm
+C,26-Nov-21,COMP 1537,Web Development,Arron Ferguson,3:30pm - 5:20pm
+D,22-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+D,22-Nov-21,COMP 1113,Business Communications,Sam Lee,1:30pm - 3:20pm
+D,22-Nov-21,COMP 1537,Web Development,Arron Ferguson,3:30pm - 5:20pm
+D,23-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 11:20am
+D,23-Nov-21,COMP 1100,CST Program Fundamentals,Dana Turner,11:30am - 12:20pm
+D,23-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:30pm
+D,24-Nov-21,COMP 1712,Biz Analysis and System Design,Hoda Rashedi,8:30am - 10:20am
+D,24-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+D,24-Nov-21,COMP 1537,Web Development,Arron Ferguson,1:30pm - 3:30pm
+D,25-Nov-21,COMM 1116,Business Communications,Sam Lee,8:30am - 10:20am
+D,25-Nov-21,COMP 1712 - LAB,Biz Analysis and System Design,Hoda Rashedi,12:30pm - 2:20pm
+D,26-Nov-21,COMP 1113,Business Communications,Takashi Nakamura,8:30am - 10:20am
+D,26-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 12:20pm
+D,26-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:20pm
+D,26-Nov-21,COMM 1116,Business Communications,Sam Lee,3:30pm - 5:20pm
+E,22-Nov-21,COMP 1712,Biz Analysis and System Design,Hoda Rashedi,8:30am - 10:20am
+E,22-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+E,22-Nov-21,COMP 1537,Web Development,Arron Ferguson,1:30pm - 3:30pm
+E,23-Nov-21,COMM 1116,Business Communications,Sam Lee,8:30am - 10:20am
+E,23-Nov-21,COMP 1712 - LAB,Biz Analysis and System Design,Hoda Rashedi,12:30pm - 2:20pm
+E,24-Nov-21,COMP 1113,Business Communications,Takashi Nakamura,8:30am - 10:20am
+E,24-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 12:20pm
+E,24-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:20pm
+E,24-Nov-21,COMM 1116,Business Communications,Sam Lee,3:30pm - 5:20pm
+E,25-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+E,25-Nov-21,COMP 1113,Business Communications,Sam Lee,1:30pm - 3:20pm
+E,25-Nov-21,COMP 1537,Web Development,Arron  Ferguson,3:30pm - 5:20pm
+E,26-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 11:20am
+E,26-Nov-21,COMP 1100,CST Program Fundamentals,Dana Turner,11:30am - 12:20pm
+E,26-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:30pm
+F,22-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 11:20am
+F,22-Nov-21,COMP 1100,CST Program Fundamentals,Dana Turner,11:30am - 12:20pm
+F,22-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:30pm
+F,23-Nov-21,COMP 1712,Biz Analysis and System Design,Hoda Rashedi,8:30am - 10:20am
+F,23-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+F,23-Nov-21,COMP 1537,Web Development,Arron  Ferguson,1:30pm - 3:30pm
+F,24-Nov-21,COMM 1116,Business Communications,Sam Lee,8:30am - 10:20am
+F,24-Nov-21,COMP 1712 - LAB,Biz Analysis and System Design,Hoda Rashedi,12:30pm - 2:20pm
+F,25-Nov-21,COMP 1113,Business Communications,Takashi Nakamura,8:30am - 10:20am
+F,25-Nov-21,COMP 1510,Programming Methods,Christopher Thompson,10:30am - 12:20pm
+F,25-Nov-21,COMP 1510 - LAB,Programming Methods,Christopher Thompson,1:30pm - 3:20pm
+F,25-Nov-21,COMM 1116,Business Communications,Sam Lee,3:30pm - 5:20pm
+F,26-Nov-21,COMP 1800,Projects,Hoda Rashedi - Carly Orr,10:30am - 12:20pm
+F,26-Nov-21,COMP 1113,Business Communications,Sam Lee,1:30pm - 3:20pm
+F,26-Nov-21,COMP 1537,Web Development,Arron  Ferguson,3:30pm - 5:20pm
