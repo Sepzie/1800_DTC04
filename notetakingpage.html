@@ -69,37 +69,37 @@
             placeholder="Start taking notes!"></textarea>
         <button type="button" class="btn btn-info" onclick="saveUserNote()" style="margin-top: 5%;">Save</button>
     </div>
-
     <script>
         var currentUser
 
-        function saveUserNote() {
+        async function saveUserNote() {
             firebase.auth().onAuthStateChanged(user => {
                 // Check if user is signed in:
                 if (user) {
-                    // Do something for the current logged-in user here: 
                     console.log(user.uid);
-                    //go to the correct user document by referencing to the user uid
-                    //Save new info to database
                     note = document.getElementById('exampleFormControlTextarea1')
-                        .value; //get the value of the field with id="exampleFormControlTextarea1"
+                        .value;
                     title = document.getElementById('title').value;
+                    
+                    let course = localStorage.getItem("course")
 
-                    currentUser = db.collection("users").doc(user.uid).collection("COMP1510Notes");
+                    currentUser = db.collection("users").doc(user.uid).collection(course);
 
                     currentUser.add({
                         Title: title,
                         Note: note
-                    })
-                    console.log(note + ' with title of ' + title + ' was added to COMP1510!')
+                    });
+                    console.log(note + ' with title of ' + title + ' was added to ' + course + '!');
+                    setTimeout(function () {
+                        window.location.href = "/viewnotes.html"; // You used `el`, not `element`?
+                    }, 500);
                 } else {
-                    // No user is signed in.
+
                 }
             });
-
         }
-
-        function redirecti() {
+        
+        function redirect() {
             window.location.assign("viewnotes.html");
         }
 

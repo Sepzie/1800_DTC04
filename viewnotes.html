@@ -28,6 +28,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
     <!-- Link to the api keys for your firebase project -->
     <script src="scripts/firebaseAPI.js"></script>
 
@@ -41,8 +44,9 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="navbar">
         <div class="container-fluid">
             <span class="navbar-brand" href="main">VLB</span>
-            <a href="/profile.html"><img class="bi-window text-primary" id="profile" src="./images/account.png" alt="..."></a>
-            
+            <a href="/profile.html"><img class="bi-window text-primary" id="profile" src="./images/account.png"
+                    alt="..."></a>
+
         </div>
     </nav>
     <div class="row">
@@ -56,54 +60,79 @@
             <div class="card-body">
                 <h5 class="card-title">...</h5>
                 <p class="card-text">...</p>
-                <a class="btn btn-primary card-href" style="float: right; font-size: 0.6em;">View more</a>
+                <a class="btn btn-secondary edit" onclick="setEditNoteData(this.id)" href="./updatenotes.html">Edit</a>
+                <a class="btn btn-info delete" id="SaveButton" onclick="deleteNote(this.id), deleteRefresh(this)">Delete</a>
             </div>
         </div>
     </template>
 
     <div class="container" style="width: 100%; padding: 0px;">
-        <h1 style="display: inline-block; margin-top: 5%; margin-left: 5%;">Notes</h1>
+        <h1 style="display: inline-block; margin-top: 5%; margin-left: 5%; font-size: 1.5em;" id="notes"></h1>
+        <a href="./notetakingpage.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true"
+            style="float: right; margin: 5% 5%; border-radius: 50%;">+</a>
         <div class="container">
-            <div id="COMP1510Notes-go-here" class="row row-cols-auto">
+            <div id="courseNotes-go-here" class="row row-cols-auto">
 
             </div>
         </div>
     </div>
-    <a href="./notetakingpage.html" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" style="float: right; margin: auto;">+</a>
     <script>
         var currentUser;
 
-        localStorage.setItem('courseName', 'COMP1510');
+        function deleteNote(id) {
+            firebase.auth().onAuthStateChanged(user => {
+                if (user) {
+                    let note_collection = localStorage.getItem("course")
+                    let doc_id = id.slice(1,)
+                    db.collection("users").doc(user.uid).collection(note_collection).doc(doc_id).delete();
+                    console.log("Deleted!")
+                } else {
+                }
+            });
+        }
+
+        function deleteRefresh(node_id) {
+            node_id.parentNode.removeChild(node_id.parentNode.parentNode.parentNode.parentNode)
+        }
+
+        function courseNotes() {
+            let course = localStorage.getItem('course');
+            console.log(course);
+            
+            displayNotes(course);
+
+            document.getElementById('notes').innerHTML = course + ' Notes';
+        };
+
+        courseNotes();
 
         function displayNotes(collection) {
             firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
                 if (user) {
                     let CardTemplate = document.getElementById("CardTemplate");
 
                     db.collection("users").doc(user.uid).collection(collection).get()
                         .then(snap => {
                             var i = 1;
-                            snap.forEach(doc => { //iterate thru each doc
+                            snap.forEach(doc => {
                                 var title = doc.data().Title;
                                 var details = doc.data().Note.slice(0, 30);
                                 let newcard = CardTemplate.content.cloneNode(true);
-                                
-                                //update title and text and image
+                                console.log(doc.id)
                                 newcard.querySelector('.card-title').innerHTML = title;
 
-                                if (details.length >= 30) {
-                                    details = details + "...";
+                                if (details.length >= 20) {
+                                    details = details.slice(0,20) + "...";
                                 }
                                 newcard.querySelector('.card-text').innerHTML = details;
 
-                                //give unique ids to all elements for future use
                                 newcard.querySelector('.card-title').setAttribute("id", "ctitle" +
                                     i);
                                 newcard.querySelector('.card-text').setAttribute("id", "ctext" + i);
 
-                                //attach to gallery
-                                document.getElementById(collection + "-go-here").appendChild(
+                                newcard.querySelector('.edit').setAttribute("id", "e" + doc.id);
+                                newcard.querySelector('.delete').setAttribute("id", "d" + doc.id);
+                                document.getElementById("courseNotes-go-here").appendChild(
                                     newcard);
                                 i++;
                             })
@@ -114,7 +143,10 @@
             });
         }
 
-        displayNotes('COMP1510Notes');
+        function setEditNoteData (id){
+            let Note_ID = id.slice(1,)
+            localStorage.setItem("noteId", Note_ID)
+        }
 
         function insertName() {
             firebase.auth().onAuthStateChanged(user => {
