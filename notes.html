@@ -63,7 +63,7 @@
 <body id="body">
     <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="navbar">
         <div class="container-fluid">
-            <span class="navbar-brand" href="main">VLB</span>
+            <a class="navbar-brand" href="./main.html">VLB</a>
             <a href="/profile.html"><img class="bi-window text-primary" id="profile" src="./images/account.png"
                     alt="..."></a>
 
@@ -106,7 +106,7 @@
     </template>
 
     <template id="ClassTemplate" class="row">
-        <div class="col-sm">
+        <div class="col-sm" style="margin-bottom: 5%; margin-top: 2%;">
             <div class="card" style="width: 18rem;">
                 <div class="card-body">
                     <h5 class="card-title">COMP 1537</h5>
@@ -120,25 +120,17 @@
     <script>
         function insertName() {
             firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
                 if (user) {
-                    // Do something for the current logged-in user here: 
                     console.log(user.uid);
-                    //go to the correct user document by referencing to the user uid
                     currentUser = db.collection("users").doc(user.uid);
-                    //get the document for current user.
                     currentUser.get().then(userDoc => {
                         var user_Name = userDoc.data().name;
                         console.log(user_Name);
                         console.log(userDoc.data().set)
                         displaySchedule(userDoc.data().set);
-                        //method #1:  insert with html only
-                        //document.getElementById("name-goes-here").innerText = n;    //using javascript
-                        //method #2:  insert using jquery
-                        $("#name-goes-here").text(user_Name); //using jquery
+                        $("#name-goes-here").text(user_Name);
                     })
                 } else {
-                    // No user is signed in.
                 }
             });
         }
@@ -151,23 +143,20 @@
                 .then(setDoc => {
                     var Dates = setDoc.data().Dates;
                     for (i = 0; i < Dates.length; i++) { 
-                        // This for loop iterates through the dates inside a set and creates a banner for each
                         console.log(setDoc.id)
                         let date = Dates[i];
                         let newdate = DateTemplate.content.cloneNode(true)
                         newdate.querySelector('.date-goes-here').innerHTML = date
                         newdate.querySelector('.class-goes-here').setAttribute("id", date)
                         document.getElementById('body').appendChild(newdate)
-                        // It then creates the cards for each class under it's banner
                         set.collection(date).get().then(snap => {
-                            snap.forEach(classDoc => { //iterate thru each doc (class)
+                            snap.forEach(classDoc => {
                                 var CourseID = classDoc.data().CourseID
                                 console.log(CourseID)
                                 var Instructor = classDoc.data().Instructor
                                 var Time = classDoc.data().Time
 
                                 let newclass = ClassTemplate.content.cloneNode(true)
-                                // update class card
                                 newclass.querySelector('.card-title').innerHTML = CourseID
                                 newclass.querySelector('.instructor').innerHTML = "Instructor: " + Instructor
                                 newclass.querySelector('.time').innerHTML = "Time: " + Time

@@ -43,7 +43,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="navbar">
         <div class="container-fluid">
-            <span class="navbar-brand" href="main">VLB</span>
+            <a class="navbar-brand" href="./main.html">VLB</a>
             <a href="/profile.html"><img class="bi-window text-primary" id="profile" src="./images/account.png"
                     alt="..."></a>
 
@@ -60,8 +60,8 @@
             <div class="card-body">
                 <h5 class="card-title">...</h5>
                 <p class="card-text">...</p>
-                <a class="btn btn-secondary edit" onclick="setEditNoteData(this.id)" href="./updatenotes.html">Edit</a>
-                <a class="btn btn-info delete" id="SaveButton" onclick="deleteNote(this.id), deleteRefresh(this)">Delete</a>
+                <a class="btn btn-primary edit" onclick="setEditNoteData(this.id)" style="float: right; width: 30%; font-size: 0.6em;" href="./updatenotes.html">Edit</a>
+                <a class="btn btn-secondary delete" id="SaveButton" style="float: right; width: 30%; font-size: 0.6em; margin-right: 2%;" onclick="deleteNote(this.id), deleteRefresh(this)">Delete</a>
             </div>
         </div>
     </template>
@@ -93,7 +93,7 @@
 
         function deleteRefresh() {
             setTimeout(function () {
-                        window.location.href = "/viewnotes.html"; // You used `el`, not `element`?
+                        window.location.href = "/viewnotes.html";
                     }, 500);
         }
 
@@ -152,23 +152,15 @@
 
         function insertName() {
             firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
                 if (user) {
-                    // Do something for the current logged-in user here: 
                     console.log(user.uid);
-                    //go to the correct user document by referencing to the user uid
                     currentUser = db.collection("users").doc(user.uid);
-                    //get the document for current user.
                     currentUser.get().then(userDoc => {
                         var user_Name = userDoc.data().name;
                         console.log(user_Name);
-                        //method #1:  insert with html only
-                        //document.getElementById("name-goes-here").innerText = n;    //using javascript
-                        //method #2:  insert using jquery
-                        $("#name-goes-here").text(user_Name); //using jquery
+                        $("#name-goes-here").text(user_Name);
                     })
                 } else {
-                    // No user is signed in.
                 }
             });
         }

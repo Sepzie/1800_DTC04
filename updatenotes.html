@@ -47,7 +47,7 @@
     <!-- Nav bar-->
     <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="navbar">
         <div class="container-fluid">
-            <span class="navbar-brand"><a href="./main.html">VLB</a></span>
+            <a class="navbar-brand" href="./main.html">VLB</a>
             <a href="/profile.html"><img class="bi-window text-primary" id="profile" src="./images/account.png"
                     alt="..."></a>
 
@@ -68,9 +68,9 @@
                 </div>
             </fieldset>
             <div class="d-flex justify-content-end mt-5">
-                <a class="btn btn-secondary" onclick="editUserNote()">Edit</a>
+                <a class="btn btn-secondary" style="float: right; width: 20%; font-size: 0.6em;" onclick="editUserNote()">Edit</a>
                 <span style="width: 10px"></span>
-                <a class="btn btn-info" id="SaveButton" onclick="saveUserInfo()">Save</a>
+                <a class="btn btn-primary" id="SaveButton" style="float: right; width: 20%; font-size: 0.6em;" onclick="saveUserInfo()">Save</a>
             </div>
         </form>
     </div>
@@ -81,22 +81,17 @@
 
         function populateInfo(doc_id) {
             firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
                 if (user) {
 
                     course_name = localStorage.getItem("course")
                     console.log(course_name, doc_id)
-                    //go to the correct user document by referencing to the user uid
                     let currentNote = db.collection("users").doc(user.uid).collection(course_name).doc(doc_id)
-                    //get the document for current user.
                     currentNote.get()
                         .then(userNote => {
-                            //get the data fields of the user
                             var noteTitle = userNote.data().Title;
                             var Note = userNote.data().Note;
 
                             console.log(noteTitle, Note)
-                            //if the data fields are not empty, then write them in to the form.
                             if (noteTitle != null) {
                                 document.getElementById("titleInput").value = noteTitle;
                             }
@@ -105,49 +100,25 @@
                             }
                         })
                 } else {
-                    // No user is signed in.
                     console.log("No user is signed in");
                 }
             });
         }
 
         function editUserNote() {
-            //Enable the form fields
             document.getElementById('personalInfoFields').disabled = false;
         }
 
-        // function saveUserInfo() {
-        //     //Save new info to database
-        //     course_name = localStorage.getItem("course")
-        //     var doc_id = localStorage.getItem("noteId")
-        //     let currentNote = db.collection("users").doc(user.uid).collection(course_name).doc(doc_id)
-        //     noteTitle = document.getElementById('titleInput').value; //get the value of the field with id="nameInput"
-        //     noteContent = document.getElementById('noteInput').value; //get the value of the field with id="setInput"
-        //     currentNote.update({
-        //             Note: noteTitle,
-        //             Title: noteContent
-        //         })
-        //         .then(() => {
-        //             console.log("Document successfully updated!");
-        //         })
-        //     document.getElementById('personalInfoFields').disabled = true;
-        //     setTimeout(function () {
-        //         window.location.href = "./todo.html"; // You used `el`, not `element`?
-        //     }, 500);
-        // }
-
         function saveUserInfo() {
             firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
                 if (user) {
-                    //Save new info to database
                     course_name = localStorage.getItem("course")
                     var doc_id = localStorage.getItem("noteId")
                     let currentNote = db.collection("users").doc(user.uid).collection(course_name).doc(doc_id)
                     noteTitle = document.getElementById('titleInput')
-                        .value; //get the value of the field with id="nameInput"
+                        .value; 
                     noteContent = document.getElementById('noteInput')
-                        .value; //get the value of the field with id="setInput"
+                        .value; 
                     currentNote.update({
                             Note: noteContent,
                             Title: noteTitle
@@ -157,10 +128,10 @@
                         })
                     document.getElementById('personalInfoFields').disabled = true;
                     setTimeout(function () {
-                        window.location.href = "/viewnotes.html"; // You used `el`, not `element`?
+                        window.location.href = "/viewnotes.html";
                     }, 500);
                 } else {
-                    // No user is signed in.
+                    console.log('Not signed in!')
                 }
             });
         }

@@ -64,24 +64,28 @@
     <div class="form-group" style="display: block; width: 80%; margin: auto;">
         <textarea class="form-control" id="title" rows="1" style="margin-top: 5%; width: 50%;"
             placeholder="Title"></textarea>
-        <label for="exampleFormControlTextarea1" style="margin-top: 5%; margin-bottom: 5%;"><b>COMP 1510</b></label>
+        <label for="exampleFormControlTextarea1" style="margin-top: 5%; margin-bottom: 5%;"><b id="note-title">COMP 1510</b></label>
         <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"
             placeholder="Start taking notes!"></textarea>
-        <button type="button" class="btn btn-info" onclick="saveUserNote()" style="margin-top: 5%;">Save</button>
+        <button type="button" class="btn btn-primary" style="float: right; width: 30%; font-size: 0.6em; margin-top: 5%;" onclick="saveUserNote()">Save</button>
     </div>
     <script>
         var currentUser
 
+        let courseName = localStorage.getItem("course")
+        console.log(courseName)
+        document.getElementById('note-title').innerHTML = courseName;
+
         async function saveUserNote() {
             firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
                 if (user) {
-                    console.log(user.uid);
                     note = document.getElementById('exampleFormControlTextarea1')
                         .value;
                     title = document.getElementById('title').value;
                     
                     let course = localStorage.getItem("course")
+
+                    document.getElementById('note-title').innerHTML = course;
 
                     currentUser = db.collection("users").doc(user.uid).collection(course);
 
@@ -91,7 +95,7 @@
                     });
                     console.log(note + ' with title of ' + title + ' was added to ' + course + '!');
                     setTimeout(function () {
-                        window.location.href = "/viewnotes.html"; // You used `el`, not `element`?
+                        window.location.href = "/viewnotes.html";
                     }, 500);
                 } else {
 
@@ -105,23 +109,15 @@
 
         function insertName() {
             firebase.auth().onAuthStateChanged(user => {
-                // Check if user is signed in:
                 if (user) {
-                    // Do something for the current logged-in user here: 
                     console.log(user.uid);
-                    //go to the correct user document by referencing to the user uid
                     currentUser = db.collection("users").doc(user.uid);
-                    //get the document for current user.
                     currentUser.get().then(userDoc => {
                         var user_Name = userDoc.data().name;
                         console.log(user_Name);
-                        //method #1:  insert with html only
-                        //document.getElementById("name-goes-here").innerText = n;    //using javascript
-                        //method #2:  insert using jquery
-                        $("#name-goes-here").text(user_Name); //using jquery
+                        $("#name-goes-here").text(user_Name);
                     })
                 } else {
-                    // No user is signed in.
                 }
             });
         }
