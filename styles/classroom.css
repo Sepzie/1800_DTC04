@@ -1,4 +1,6 @@
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link { /* font colour and background colour of the selected tab */
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    /* font colour and background colour of the selected tab */
     color: white;
     background-color: rgb(136, 220, 241);
     border-radius: 1em;
@@ -6,24 +8,29 @@
     margin-bottom: 3%;
 }
 
-.nav-link { /* font colour of the rest of the unselected tab */
+.nav-link {
+    /* font colour of the rest of the unselected tab */
     color: rgb(136, 220, 241);
 }
 
-.text-primary { /* font colour of the My todo list */
-    color: #a5b6a5!important;
+.text-primary {
+    /* font colour of the My todo list */
+    color: #a5b6a5 !important;
 }
 
-#main-area { /* background colour of the main task adding area */
-    background-color:aquamarine
+#main-area {
+    /* background colour of the main task adding area */
+    background-color: aquamarine
 }
 
-.btn-primary { /*Add button */
+.btn-primary {
+    /*Add button */
     color: #1D3461;
     background-color: rgb(136, 220, 241);
 }
 
-.EditButton { /* Edit button */
+.EditButton {
+    /* Edit button */
     color: #1D3461;
     background-color: rgb(136, 220, 241);
     border-radius: 1em;
@@ -31,7 +38,8 @@
     margin-left: 2%;
 }
 
-.DeleteButton { /* Delete button */
+.DeleteButton {
+    /* Delete button */
     color: white;
     background-color: rgb(116, 0, 0);
     border-radius: 1em;
@@ -43,19 +51,23 @@
     border-radius: 1em;
 }
 
-.btn-secondary { /*  Edit button in the todomore page */
+.btn-secondary {
+    /*  Edit button in the todomore page */
     color: #1D3461;
     background-color: rgb(136, 220, 241);
     border-radius: 1em;
 }
 
-.btn-info { /* Save button in the todomore page */
+.btn-info {
+    /* Save button in the todomore page */
     color: #1D3461;
     background-color: rgb(136, 220, 241);
     float: right;
     border-radius: 1em;
 }
-.bg-primary { /*Navbar*/
+
+.bg-primary {
+    /*Navbar*/
     background-color: #247BA0 !important;
     border-bottom: 2px solid rgb(136, 220, 241) !important;
 }
@@ -77,42 +89,48 @@ body {
 .card-body {
     flex: 1 1 auto;
     padding: 1rem 1rem;
-    background-color: #247BA0 !important; /* Changes color of the cards background in main page */
+    background-color: #247BA0 !important;
+    /* Changes color of the cards background in main page */
     border: 1px solid rgb(136, 220, 241);
     border-radius: 1em !important;
     color: white;
 }
 
-.card-title, .card-text {
-    color: rgb(255, 255, 255) !important; /* Changes font color in cards */
+.card-title,
+.card-text {
+    color: rgb(255, 255, 255) !important;
+    /* Changes font color in cards */
 }
-body{
+
+body {
     background-color: #1D3461;
     color: #FFFAFF;
 }
 
-.list-group-item{ /*Banner for each date in classroom*/
-    background-color:#247BA0 !important;
+.list-group-item {
+    /*Banner for each date in classroom*/
+    background-color: #247BA0 !important;
     border-top: 1px solid rgb(136, 220, 241);
     border-bottom: 1px solid rgb(136, 220, 241) !important;
     color: #FFFAFF !important;
     border: none !important;
 }
 
-.date-goes-here {  
+.date-goes-here {
     border-top: 1px solid rgb(136, 220, 241) !important;
     border-bottom: 1px solid rgb(136, 220, 241) !important;
-    
+
 }
 
-.card{ /*Card for each class in classroom*/
+.card {
+    /*Card for each class in classroom*/
     color: black !important;
     background-color: transparent;
     border: 0px;
     padding: 0px;
 }
 
-.btn-primary{
+.btn-primary {
     background-color: rgb(136, 220, 241);
     color: #1D3461;
     border: 0px;
@@ -125,8 +143,8 @@ body{
     border-radius: 1em !important;
 }
 
-.bg-body{
-    background-color: rgb(136, 220, 241) !important ;
+.bg-body {
+    background-color: rgb(136, 220, 241) !important;
     color: #1D3461;
 }
 
@@ -134,8 +152,11 @@ body{
     background-color: transparent;
 }
 
-.firebaseui-id-page-sign-in, .firebaseui-card-content, .firebaseui-card-actions, form {
-    background-color: rgb(136, 220, 241) !important ;
+.firebaseui-id-page-sign-in,
+.firebaseui-card-content,
+.firebaseui-card-actions,
+form {
+    background-color: rgb(136, 220, 241) !important;
     color: white;
     border: 3px rgb(136, 220, 241) solid;
     border-radius: 1em;
@@ -174,6 +195,6 @@ a {
 }
 
 .btn-lg {
-    background-color: rgb(136, 220, 241) !important ;
+    background-color: rgb(136, 220, 241) !important;
     color: #1D3461 !important;
-} 
+}
