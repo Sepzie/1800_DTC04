@@ -102,13 +102,15 @@
     </ul>
 
     <template id="CardTemplate" style="margin: auto;">
-        <div class="card py-2 mx-2" style="width: 18rem; margin: 5%">
+        <div class="card py-2 mx-2 dataCards" style="width: 18rem; margin: 5%">
             <div class="card-body">
                 <h5 class="card-item">...</h5>
                 <p class="card-date">...</p>
                 <p class="doc-id" style="display: none;">...</p>
-                <a class="btn btn-info EditButton" href="todomore.html" style="float: left; font-size: 0.6em;" onclick="setEditData(this.id)">Edit</a>
-                <a class="btn btn-danger DeleteButton" style="float: right; font-size: 0.6em;" onclick="deleteTodo(this.id), displayAfterDelete(this)">Delete</a>
+                <a class="btn btn-info EditButton" href="todomore.html" style="float: left; font-size: 0.6em;"
+                    onclick="setEditData(this.id)">Edit</a>
+                <a class="btn btn-danger DeleteButton" style="float: right; font-size: 0.6em;"
+                    onclick="deleteTodo(this.id), displayAfterDelete(this)">Delete</a>
             </div>
         </div>
     </template>
@@ -134,11 +136,24 @@
                         <input type="date" class="form-control col" id="myDate" value="2021-12-01">
                     </div>
                 </div>
+                
+                <div>  
+                    <label>Sort By Date: </label>
+                    <button class="btn btn-primary" onclick="sortByAscending()"> Ascending </button>
+                    <button class="btn btn-primary" onclick="sortByDescending()"> Descending </button>
+                </div>
             </div>
+            
+
         </div>
     </div>
-
+    
+    
+    
     <div class="container">
+        
+        
+        
         <div id="todoitem-go-here" class="row row-cols-auto">
 
         </div>
@@ -210,16 +225,16 @@
                 if (user) {
                     console.log(id)
                     // Do something for the current logged-in user here:
-                    
+
                     //go to the correct user document by referencing to the user uid
                     //Save new info to database
-                    
+
                     // let doc_id = document.getElementsByName().id
 
                     db.collection("users").doc(user.uid).collection("todo").doc(id).delete();
-                    console.log('Successfully deleted '+ id)
-                    
-                    
+                    console.log('Successfully deleted ' + id)
+
+
 
 
                 } else {
@@ -229,7 +244,7 @@
         }
 
         function setEditData(id) {
-            var doc_id = id.slice(1, )
+            var doc_id = id.slice(1,)
             localStorage.setItem("Doc_ID", doc_id)
 
         }
@@ -261,7 +276,7 @@
                                 newcard.querySelector('.doc-id').setAttribute("id", doc_id)
                                 newcard.querySelector('.DeleteButton').setAttribute("id", doc_id)
                                 newcard.querySelector('.EditButton').setAttribute("id", "u" + doc_id)
-                        
+
                                 //attach to gallery
                                 document.getElementById("todoitem-go-here").appendChild(newcard);
                                 i++;
@@ -273,6 +288,101 @@
             });
         }
 
+        function sortByAscending() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+                    const card = document.querySelector('.dataCards');
+                    card.parentElement.innerHTML = "";
+
+                    let CardTemplate = document.getElementById("CardTemplate");
+
+                    db.collection("users").doc(user.uid).collection("todo").orderBy("Due_Date").get()
+                        .then(snap => {
+                            var i = 1;
+                            snap.forEach(doc => { //iterate thru each doc
+                                var item = doc.data().To_Do;
+                                var date = doc.data().Due_Date;
+                                var doc_id = doc.data().Doc_ID
+                                let newcard = CardTemplate.content.cloneNode(true);
+
+                                //update title and text and image
+                                newcard.querySelector('.card-item').innerHTML = item;
+                                newcard.querySelector('.card-date').innerHTML = "Due Date: " + date;
+                                newcard.querySelector('.doc-id').innerHTML = doc_id;
+
+                                //give unique ids to all elements for future use
+                                newcard.querySelector('.card-item').setAttribute("id", "citem" + i);
+                                newcard.querySelector('.card-date').setAttribute("id", "cdate" + i);
+                                newcard.querySelector('.doc-id').setAttribute("name", "doc-id" + i);
+                                newcard.querySelector('.doc-id').setAttribute("id", doc_id)
+                                newcard.querySelector('.DeleteButton').setAttribute("id", doc_id)
+                                newcard.querySelector('.EditButton').setAttribute("id", "u" + doc_id)
+
+
+                                // window.location.href = "/todo.html";
+
+
+                                //attach to gallery
+                                document.getElementById("todoitem-go-here").appendChild(newcard);
+                                i++;
+                            })
+                        })
+
+                } else {
+
+                }
+            });
+        }
+
+        function sortByDescending() {
+            firebase.auth().onAuthStateChanged(user => {
+                // Check if user is signed in:
+                if (user) {
+                    const card = document.querySelector('.dataCards');
+                    card.parentElement.innerHTML = "";
+
+                    let CardTemplate = document.getElementById("CardTemplate");
+
+                    db.collection("users").doc(user.uid).collection("todo").orderBy("Due_Date", "desc").get()
+                        .then(snap => {
+                            var i = 1;
+                            snap.forEach(doc => { //iterate thru each doc
+                                var item = doc.data().To_Do;
+                                var date = doc.data().Due_Date;
+                                var doc_id = doc.data().Doc_ID
+                                let newcard = CardTemplate.content.cloneNode(true);
+
+                                //update title and text and image
+                                newcard.querySelector('.card-item').innerHTML = item;
+                                newcard.querySelector('.card-date').innerHTML = "Due Date: " + date;
+                                newcard.querySelector('.doc-id').innerHTML = doc_id;
+
+                                //give unique ids to all elements for future use
+                                newcard.querySelector('.card-item').setAttribute("id", "citem" + i);
+                                newcard.querySelector('.card-date').setAttribute("id", "cdate" + i);
+                                newcard.querySelector('.doc-id').setAttribute("name", "doc-id" + i);
+                                newcard.querySelector('.doc-id').setAttribute("id", doc_id)
+                                newcard.querySelector('.DeleteButton').setAttribute("id", doc_id)
+                                newcard.querySelector('.EditButton').setAttribute("id", "u" + doc_id)
+
+
+                                // window.location.href = "/todo.html";
+
+
+                                //attach to gallery
+                                document.getElementById("todoitem-go-here").appendChild(newcard);
+                                i++;
+                            })
+                        })
+
+                } else {
+
+                }
+            });
+        }
+
+        
         displayTodo();
     </script>
 
