@@ -1,0 +1,71 @@
+body {
+    background-color: black;
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 90% 10%;
+    grid-template-columns: 100%;
+}
+
+.videos {
+    display: grid;
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 1;
+    grid-template-rows: 50% 25% 25%;
+    grid-template-columns: 50% 50%;
+    height: 100%;
+}
+
+img {
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+}
+
+#teacher {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+}
+
+#student1 {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 1;
+}
+
+#student2 {
+    grid-row: 2 / span 1;
+    grid-column: 2 / span 1;
+}
+
+#student3 {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 1;
+}
+
+#student4 {
+    grid-row: 3 / span 1;
+    grid-column: 2 / span 1;
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100%;
+    background-color: rgb(66, 66, 66);
+    border-top: 1px solid white;
+}
+
+#leave-button {
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 11px;
+    width: 50px;
+    height: 35px;
+    margin: auto;
+}
+
+#leave {
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+}
