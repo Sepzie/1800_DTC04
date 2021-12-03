@@ -1,13 +1,13 @@
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link { /* font colour and background colour of the selected tab */
     color: white;
-    background-color: #FB3640;
+    background-color: rgb(136, 220, 241);
     border-radius: 1em;
     margin-top: 3%;
     margin-bottom: 3%;
 }
 
 .nav-link { /* font colour of the rest of the unselected tab */
-    color: #FB3640;
+    color: rgb(136, 220, 241);
 }
 
 .text-primary { /* font colour of the My todo list */
@@ -18,32 +18,46 @@
     background-color:aquamarine
 }
 
-.btn-primary { /* font colour and background colour of the Add button */
-    color: aquamarine;
-    background-color: bisque;
+.btn-primary { /*Add button */
+    color: #1D3461;
+    background-color: rgb(136, 220, 241);
 }
 
-.EditButton { /* font colour and background colour of the Edit button */
-    color: aquamarine;
-    background-color: bisque;
+.EditButton { /* Edit button */
+    color: #1D3461;
+    background-color: rgb(136, 220, 241);
+    border-radius: 1em;
+    float: right !important;
+    margin-left: 2%;
 }
 
-.DeleteButton { /* font colour and background colour of the Delete button */
-    color: aquamarine;
-    background-color: bisque;
+.DeleteButton { /* Delete button */
+    color: white;
+    background-color: rgb(116, 0, 0);
+    border-radius: 1em;
 }
 
-.btn-secondary { /* font colour and background colour of the Edit button in the todomore page */
-    color: aquamarine;
-    background-color: bisque;
+.delete {
+    color: white !important;
+    background-color: rgb(116, 0, 0) !important;
+    border-radius: 1em;
 }
 
-.btn-info { /* font colour and background colour of the Save button in the todomore page */
-    color: aquamarine;
-    background-color: bisque;
+.btn-secondary { /*  Edit button in the todomore page */
+    color: #1D3461;
+    background-color: rgb(136, 220, 241);
+    border-radius: 1em;
 }
-.bg-primary {
-    background-color: #FB3640 !important;
+
+.btn-info { /* Save button in the todomore page */
+    color: #1D3461;
+    background-color: rgb(136, 220, 241);
+    float: right;
+    border-radius: 1em;
+}
+.bg-primary { /*Navbar*/
+    background-color: #247BA0 !important;
+    border-bottom: 2px solid rgb(136, 220, 241) !important;
 }
 
 .navbar-brand {
@@ -65,6 +79,8 @@ body {
     padding: 1rem 1rem;
     background-color: #247BA0 !important; /* Changes color of the cards background in main page */
     border: 1px solid rgb(136, 220, 241);
+    border-radius: 1em !important;
+    color: white;
 }
 
 .card-title, .card-text {
@@ -77,27 +93,87 @@ body{
 
 .list-group-item{ /*Banner for each date in classroom*/
     background-color:#247BA0 !important;
+    border-top: 1px solid rgb(136, 220, 241);
+    border-bottom: 1px solid rgb(136, 220, 241) !important;
     color: #FFFAFF !important;
     border: none !important;
 }
 
+.date-goes-here {  
+    border-top: 1px solid rgb(136, 220, 241) !important;
+    border-bottom: 1px solid rgb(136, 220, 241) !important;
+    
+}
+
 .card{ /*Card for each class in classroom*/
     color: black !important;
-    background-color: #FFFAFF;
+    background-color: transparent;
     border: 0px;
+    padding: 0px;
 }
 
 .btn-primary{
-    background-color: #FB3640;
-    color: #FFFAFF;
+    background-color: rgb(136, 220, 241);
+    color: #1D3461;
     border: 0px;
     border-radius: 1em;
 }
 
-.container {
-    border: 0px;
+.dataCards {
+    padding: 0px !important;
+    border: 1px solid black;
+    border-radius: 1em !important;
 }
 
-.card-body {
-    border: 0px;
+.bg-body{
+    background-color: rgb(136, 220, 241) !important ;
+    color: #1D3461;
 }
+
+.firebaseui-container {
+    background-color: transparent;
+}
+
+.firebaseui-id-page-sign-in, .firebaseui-card-content, .firebaseui-card-actions, form {
+    background-color: rgb(136, 220, 241) !important ;
+    color: white;
+    border: 3px rgb(136, 220, 241) solid;
+    border-radius: 1em;
+}
+
+
+.firebaseui-card-header {
+    color: white !important;
+    background-color: #247BA0;
+    border: 1px #1D3461 solid;
+    border-radius: 1em;
+}
+
+.firebaseui-title {
+    color: white;
+}
+
+.firebaseui-label {
+    color: #1D3461 !important;
+}
+
+
+.mdl-button--colored {
+    background-color: #1D3461 !important;
+    border-radius: 1em;
+}
+
+form {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.btn-lg {
+    background-color: rgb(136, 220, 241) !important ;
+    color: #1D3461 !important;
+} 
