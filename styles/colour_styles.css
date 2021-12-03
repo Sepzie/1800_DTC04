@@ -1,14 +1,17 @@
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link { /* font colour and background colour of the selected tab */
-    color: rgb(238, 0, 0);
-    background-color: #000000;
+    color: white;
+    background-color: #FB3640;
+    border-radius: 1em;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }
 
 .nav-link { /* font colour of the rest of the unselected tab */
-    color: #d9fd0d;
+    color: #FB3640;
 }
 
 .text-primary { /* font colour of the My todo list */
-    color: #11fd0d!important;
+    color: #a5b6a5!important;
 }
 
 #main-area { /* background colour of the main task adding area */
@@ -40,7 +43,7 @@
     background-color: bisque;
 }
 .bg-primary {
-    background-color: #516e88 !important;
+    background-color: #FB3640 !important;
 }
 
 .navbar-brand {
@@ -60,29 +63,41 @@ body {
 .card-body {
     flex: 1 1 auto;
     padding: 1rem 1rem;
-    background-color: #516e88 !important; /* Changes color of the cards background in main page */
+    background-color: #247BA0 !important; /* Changes color of the cards background in main page */
+    border: 1px solid rgb(136, 220, 241);
 }
 
 .card-title, .card-text {
     color: rgb(255, 255, 255) !important; /* Changes font color in cards */
 }
 body{
-    background-color: white;
+    background-color: #1D3461;
+    color: #FFFAFF;
 }
 
 .list-group-item{ /*Banner for each date in classroom*/
-    background-color: rgb(119, 219, 132) !important;
-    color: black !important;
+    background-color:#247BA0 !important;
+    color: #FFFAFF !important;
     border: none !important;
 }
 
 .card{ /*Card for each class in classroom*/
     color: black !important;
-    background-color: rgb(119, 219, 132);
-    border: 2px solid black;
+    background-color: #FFFAFF;
+    border: 0px;
 }
 
 .btn-primary{
-    background-color: black;
-    color: red
+    background-color: #FB3640;
+    color: #FFFAFF;
+    border: 0px;
+    border-radius: 1em;
+}
+
+.container {
+    border: 0px;
+}
+
+.card-body {
+    border: 0px;
 }
