@@ -32,16 +32,16 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
 
-    <script src="scripts/firebaseAPI.js"></script>
+    <script src="../scripts/firebaseAPI.js"></script>
 
     <!-- Link to the api keys for your firebase project -->
-    <link href="./styles/my_style.css" rel="stylesheet">
+    <link href="../styles/my_style.css" rel="stylesheet">
 
     <!-- CDN-->
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
     <!--Final CSS-->
-    <link href="./styles/colour_styles.css" rel="stylesheet">
+    <link href="../styles/colour_styles.css" rel="stylesheet">
 
     <style>
         section {
@@ -74,8 +74,8 @@
 <body id="body">
     <nav class="navbar navbar-expand-lg navbar-light bg-primary" id="navbar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="./main.html">VLB</a>
-            <a href="/profile.html"><img class="bi-window text-primary" id="profile" src="./images/account.png"
+            <a class="navbar-brand" href="../main.html">VLB</a>
+            <a href="./profile.html"><img class="bi-window text-primary" id="profile" src="../images/account.png"
                     alt="..."></a>
 
         </div>
@@ -117,7 +117,7 @@
                     <p class="card-text class-name">Web Development</p>
                     <p class="card-text instructor">Instructor: Arron Ferguson</p>
                     <p class="card-text time">Time: 8:30-10:20</p>
-                    <a href="/lecture.html" class="btn btn-primary" >Join</a>
+                    <a href="./lecture.html" class="btn btn-primary" >Join</a>
                 </div>
             </div>
         </div>
@@ -193,7 +193,7 @@
         }
 
         async function getClassCSVdata() {
-            const response = await fetch('./class_data.csv'); //send get request
+            const response = await fetch('../class_data.csv'); //send get request
             const data = await response.text(); //get file response
             const list = data.split('\n').slice(1); //get line
             list.forEach(async row => {
