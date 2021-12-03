@@ -1,0 +1,18 @@
+.testimonials .testimonial-item img {
+    max-width: 12rem;
+    box-shadow: 0px 5px 5px 0px #adb5bd;
+    align-items: center;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+    width: 50%;
+}
+
+.bi-window {
+    width: 20%;
+}
+
+body>section {
+    margin: 5%;
+}
