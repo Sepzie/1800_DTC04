@@ -74,7 +74,7 @@ async function getClassCSVdata() {
     // This function is only ran when we need to update the whole database.
     // The classes set in the database must be deleted before running this function to avoid
     // creating duplicate documents.
-    const response = await fetch('../class_data.csv'); //send get request
+    const response = await fetch('../class-data.csv'); //send get request
     const data = await response.text(); //get file response
     const list = data.split('\n').slice(1); //get line
     list.forEach(async row => {

@@ -57,7 +57,7 @@ function displaySchedule(setName) {
 }
 
 function setLocalStorage(courseName) {
-    // stores a value in local storage so it can be retrieved in the next page.
+    // stores a value in local storage so it can be retrieved in the viewnotes page.
     localStorage.setItem("course", courseName)
 }
 
