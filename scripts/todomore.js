@@ -5,8 +5,6 @@ function populateInfo(doc_id) {
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
         if (user) {
-
-
             //go to the correct user document by referencing to the user uid
             currentTodo = db.collection("users").doc(user.uid).collection("todo").doc(doc_id)
             //get the document for current user.

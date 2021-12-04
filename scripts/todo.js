@@ -62,11 +62,8 @@ function deleteTodo(id) {
         if (user) {
             console.log(id)
             // Do something for the current logged-in user here:
-
             //go to the correct user document by referencing to the user uid
             //Save new info to database
-
-            // let doc_id = document.getElementsByName().id
 
             db.collection("users").doc(user.uid).collection("todo").doc(id).delete();
             console.log('Successfully deleted ' + id)
@@ -156,10 +153,6 @@ function sortByAscending() {
                         newcard.querySelector('.DeleteButton').setAttribute("id", doc_id)
                         newcard.querySelector('.EditButton').setAttribute("id", "u" + doc_id)
 
-
-                        // window.location.href = "/todo.html";
-
-
                         //attach to gallery
                         document.getElementById("todoitem-go-here").appendChild(newcard);
                         i++;
@@ -202,11 +195,7 @@ function sortByDescending() {
                         newcard.querySelector('.doc-id').setAttribute("id", doc_id)
                         newcard.querySelector('.DeleteButton').setAttribute("id", doc_id)
                         newcard.querySelector('.EditButton').setAttribute("id", "u" + doc_id)
-
-
-                        // window.location.href = "/todo.html";
-
-
+                    
                         //attach to gallery
                         document.getElementById("todoitem-go-here").appendChild(newcard);
                         i++;

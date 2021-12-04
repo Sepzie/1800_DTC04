@@ -93,12 +93,6 @@ async function getClassCSVdata() {
 
         // console.log(classData)
         db.collection('classes').doc(set).collection(date).add(classData)
-
-        //  db.collection("classes").doc(set).add({ //write to firestore
-        //     name: country,
-        //     details: details
-        // })
-
     })
 }
 
