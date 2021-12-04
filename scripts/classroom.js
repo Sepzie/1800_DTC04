@@ -1,4 +1,6 @@
 function insertName() {
+    // insertName function is imported from other pages that use this function and we use it here to
+    // authenticate the user. Other functions that need user authentication are called within this function.
     firebase.auth().onAuthStateChanged(user => {
         // Check if user is signed in:
         if (user) {
@@ -12,9 +14,9 @@ function insertName() {
                 .then(userDoc => {
                     var user_Name = userDoc.data().name;
                     userSet = userDoc.data().set
-                    displaySchedule(userSet)
+                    displaySchedule(userSet)                // Calling display schedule function
                     //console.log(user_Name);
-                    //document.getElementById("username").innerText = n;                     //using javascript
+                    //document.getElementById("username").innerText = n;         //using javascript
                     $("#name-goes-here1").text(user_Name); //using jquery
                 })
         } else {
@@ -25,6 +27,8 @@ function insertName() {
 }
 
 function displaySchedule(userSet) {
+    // This function retrieves the schedule data from the database, and creates banners for each day and 
+    // cards for classes under each banner.
     let DateTemplate = document.getElementById("DateTemplate")
     let ClassTemplate = document.getElementById("ClassTemplate")
 
@@ -66,6 +70,10 @@ function displaySchedule(userSet) {
 }
 
 async function getClassCSVdata() {
+    // This function is to update the database with the class schedules. The schedule is saved in a CSV file.
+    // This function is only ran when we need to update the whole database.
+    // The classes set in the database must be deleted before running this function to avoid
+    // creating duplicate documents.
     const response = await fetch('../class_data.csv'); //send get request
     const data = await response.text(); //get file response
     const list = data.split('\n').slice(1); //get line

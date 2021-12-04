@@ -1,4 +1,6 @@
 function insertName() {
+    // Used to authenticate user.
+    // Display schedule function is called within this function
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             console.log(user.uid);
@@ -15,6 +17,8 @@ function insertName() {
 }
 
 function displaySchedule(setName) {
+    // This function retrieves the schedule from the database and popluates the HTML with it.
+    // A similar function is used in the classroom page.
     let DateTemplate = document.getElementById("DateTemplate")
     let ClassTemplate = document.getElementById("ClassTemplate")
 
@@ -53,6 +57,7 @@ function displaySchedule(setName) {
 }
 
 function setLocalStorage(courseName) {
+    // stores a value in local storage so it can be retrieved in the next page.
     localStorage.setItem("course", courseName)
 }
 
