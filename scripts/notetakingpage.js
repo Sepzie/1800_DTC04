@@ -1,10 +1,13 @@
 var currentUser
-
+// Retrieve the name of the course from local storage.
 let courseName = localStorage.getItem("course")
 console.log(courseName)
 document.getElementById('note-title').innerHTML = courseName;
 
 async function saveUserNote() {
+    // A function that is called when the user clicks the save button on the notetakingpage page.
+    // This function creates a new document for that note in the database under the collection for the course and 
+    // saves the title and and text of the note inside it.
     firebase.auth().onAuthStateChanged(user => {
         if (user) {
             note = document.getElementById('exampleFormControlTextarea1')
@@ -32,20 +35,7 @@ async function saveUserNote() {
 }
 
 function redirect() {
+    // redirects the user back to viewnotes.html after their note is saved.
     window.location.assign("viewnotes.html");
 }
 
-function insertName() {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            console.log(user.uid);
-            currentUser = db.collection("users").doc(user.uid);
-            currentUser.get().then(userDoc => {
-                var user_Name = userDoc.data().name;
-                console.log(user_Name);
-                $("#name-goes-here").text(user_Name);
-            })
-        } else {}
-    });
-}
-insertName();

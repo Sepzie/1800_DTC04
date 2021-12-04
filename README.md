@@ -5,14 +5,14 @@
 * [Contents](#content)
 
 ## General Info
-This is the project folde for COMP 1800 project in the term 1 of the CST program at BCIT. This project is developed by Team DTC-04 which includes Abdullah Hannani, Aditya Singh Attri and Sepehr Zohoori Rad. Our team, is developing "VLB (Virtual Learning Buddy" to help online learners to overcome distractions and stay focused by combining everything that is needed for an interactive learning environment in one place. This project was handed in on December 3, 2021.
+This is the project folder for COMP 1800 project in the term 1 of the CST program at BCIT. This project is developed by Team DTC-04 which includes Abdullah Hannani, Aditya Singh Attri and Sepehr Zohoori Rad. Our team, is developing "VLB (Virtual Learning Buddy" to help online learners to overcome distractions and stay focused by combining everything that is needed for an interactive learning environment in one place. This project was handed in on December 3, 2021.
 
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap 
-* Firebase
+* Firebase 
 	
 ## Content
 Content of the project folder:
