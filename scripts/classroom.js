@@ -77,7 +77,7 @@ async function getClassCSVdata() {
         const courseName = columns[3];
         const instructor = columns[4];
         const time = columns[5];
-        
+
         // Update the array of class dates with the dates of all classes
         const classDates = db.collection('classes').doc(set);
         const addDates = await classDates.update({
@@ -93,12 +93,6 @@ async function getClassCSVdata() {
 
         // console.log(classData)
         db.collection('classes').doc(set).collection(date).add(classData)
-
-        //  db.collection("classes").doc(set).add({ //write to firestore
-        //     name: country,
-        //     details: details
-        // })
-
     })
 }
 
