@@ -1,8 +1,12 @@
-## My Web Application (Title)
+## Virtual Learning Buddy
 
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
+
+## Hosted Project
+https://dtc04-5a24d.web.app/htmls/todo.html  
+Please view in mobile dimensions.
 
 ## General Info
 This is the project folder for COMP 1800 project in the term 1 of the CST program at BCIT. This project is developed by Team DTC-04 which includes Abdullah Hannani, Aditya Singh Attri and Sepehr Zohoori Rad. Our team, is developing "VLB (Virtual Learning Buddy" to help online learners to overcome distractions and stay focused by combining everything that is needed for an interactive learning environment in one place. This project was handed in on December 3, 2021.
