@@ -1,5 +1,6 @@
 ## Virtual Learning Buddy
 
+* [Hosted Project](#hosted-project)
 * [General info](#general-info)
 * [Technologies](#technologies)
 * [Contents](#content)
